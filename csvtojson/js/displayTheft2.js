@@ -1,7 +1,7 @@
 	var causes = ["theftUnder500", "theftOver500"];
 
 	var svg = d3.select("svg"),
-		margin = {top: 20, right: 180, bottom: 50, left: 70},
+		  margin = {top: 20, right: 180, bottom: 50, left: 70},
     	width = +svg.attr("width") - margin.left - margin.right,
     	height = +svg.attr("height") - margin.top - margin.bottom;
 

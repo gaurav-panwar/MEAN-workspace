@@ -2,48 +2,53 @@ const readline = require('readline');
 const fs = require('fs');
 var isHead = true;
 
-
+//Assigning input stream to file
 const rl = readline.createInterface({
-	input: fs.createReadStream('Crimes_-_2001_to_present.csv'),
+	input: fs.createReadStream('../Crimes_-_2001_to_present.csv'),
 });
 
-
+//Declaring variables
 var cnt = 0;
 var lineHeader = [];
 var ln = [];
 var sep = "";
+//indexes of Primary Type, Description, Year and Arrest of Crime
+var idxPrimaryType, idxDescription, idxYear, idxArrest;
 
 var theft = {"under500" : new Array(16).fill(0), "over500": new Array(16).fill(0) };
 var assault = {"arrest" : new Array(16).fill(0), "noArrest": new Array(16).fill(0) };
 const MOD = 2001;
 
-var theft2 = [];
-var assault2 = [];
 
+//Read each line from csv and process the data
 rl.on('line', function(line) {
+	line = line.replace(/"[^"]+"/g, function (match) {return match.replace(/,/g, ';');});
 
 	if(isHead == true) {
-		line = line.replace(/"[^"]+"/g, function (match) {return match.replace(/,/g, ';');});
 		lineHeader = line.split(',');
+
+		idxPrimaryType = +lineHeader.indexOf("Primary Type");
+		idxDescription = +lineHeader.indexOf("Description");
+		idxArrest = +lineHeader.indexOf("Arrest");
+		idxYear = +lineHeader.indexOf("Year");
+
 		isHead = false;
 	}
 	else {
-			line = line.replace(/"[^"]+"/g, function (match) {return match.replace(/,/g, ';');}); 
-			ln = line.split(',');
+		ln = line.split(',');
 
-			if(ln[5] == 'THEFT') {
-				if(ln[6] == '$500 AND UNDER') {
-					theft.under500[parseInt(ln[17])%MOD]++;
-				}
-				else if(ln[6] == 'OVER $500') 
-					theft.over500[parseInt(ln[17])%MOD]++;
-				
+		if(ln[idxPrimaryType] == 'THEFT') {
+			if(ln[idxDescription] == '$500 AND UNDER') {
+				theft.under500[parseInt(ln[idxYear])%MOD]++;
 			}
-			else if(ln[5] == 'ASSAULT') {
-				if(ln[8] == 'true')
-					assault.arrest[parseInt(ln[17])%MOD]++;
-				else if(ln[8] == 'false')
-					assault.noArrest[parseInt(ln[17])%MOD]++;
+			else if(ln[idxDescription] == 'OVER $500') 
+				theft.over500[parseInt(ln[idxYear])%MOD]++;	
+			}
+			else if(ln[idxPrimaryType] == 'ASSAULT') {
+				if(ln[idxArrest] == 'true')
+					assault.arrest[parseInt(ln[idxYear])%MOD]++;
+				else if(ln[idxArrest] == 'false')
+					assault.noArrest[parseInt(ln[idxYear])%MOD]++;
 			}
 			else {}
 		++cnt;
@@ -51,24 +56,21 @@ rl.on('line', function(line) {
 	
 });
 
+//Write objects to files on close of the file.
 rl.on('close', function () {
-	for (var i = 0; i < 16; i++) {
+	var theft2 = {"theftUnder500":[], "theftOver500":[]};
+	var assault2 = {"assaultArrest":[], "assaultNoArrest":[]};
 
-		var tobj = {"year": (i+MOD),
-			"theftUnder500": theft.under500[i],
-			"theftOver500": theft.over500[i]
-		 };
-		theft2.push(tobj);
-		
-		var aobj = {"year": (i+MOD),
-			"assaultArrest": assault.arrest[i],
-			"assaultNoArrest": assault.noArrest[i]
-		};
-		assault2.push(aobj);
+	for (var i = 0; i < 16; i++) {
+		theft2.theftUnder500.push({"year":(i+MOD), "count":theft.under500[i]});
+		theft2.theftOver500.push({"year":(i+MOD), "count":theft.over500[i]});
+
+		assault2.assaultArrest.push({"year":(i+MOD), "count":assault.arrest[i]});
+		assault2.assaultNoArrest.push({"year":(i+MOD), "count":assault.noArrest[i]});
 	}
 
-	fs.writeFileSync('resultTheft.json', JSON.stringify(theft2));
-	fs.writeFileSync('resultAssault.json', JSON.stringify(assault2));
+	fs.writeFileSync('../json/resultTheft2.json', JSON.stringify(theft2));
+	fs.writeFileSync('../json/resultAssault2.json', JSON.stringify(assault2));
 });
 
 
