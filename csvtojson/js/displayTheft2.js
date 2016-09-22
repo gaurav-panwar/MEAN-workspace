@@ -1,0 +1,138 @@
+	var causes = ["theftUnder500", "theftOver500"];
+
+	var svg = d3.select("svg"),
+		margin = {top: 20, right: 180, bottom: 50, left: 70},
+    	width = +svg.attr("width") - margin.left - margin.right,
+    	height = +svg.attr("height") - margin.top - margin.bottom;
+
+	var x = d3.scale.ordinal()
+    	.rangeRoundBands([0, width], 0.1);
+
+	var y = d3.scale.linear()
+    	.rangeRound([height, 0]);
+
+	var z = d3.scale.category10();
+
+	var xAxis = d3.svg.axis()
+    			.scale(x)
+    			.orient("bottom")
+    			.ticks(d3.time.years);//change this to year
+
+	var yAxis = d3.svg.axis()
+    	.scale(y)
+    	.orient("left");
+
+	var svg = d3.select("svg")
+    			.attr("width", width + margin.left + margin.right)
+    			.attr("height", height + margin.top + margin.bottom)
+  				.append("g")
+    			.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+	d3.json("json/resultTheft.json", function(error, data) {
+  		if (error) throw error;
+
+  		var layers = d3.layout.stack()(causes.map(function(c) {
+    		return data.map(function(d) {
+      			return {x: +d.year, y: +d[c]};
+    	});
+  	}));
+
+  	x.domain(layers[0].map(function(d) { return d.x; }));
+  	y.domain([0, d3.max(layers[layers.length - 1], function(d) { return d.y0 + d.y; })]).nice();
+
+  	var layer = svg.selectAll(".layer")
+      			.data(layers)
+    			.enter().append("g")
+      			.attr("class", "layer")
+      			.style("fill", function(d, i) { return z(i); });
+
+  	layer.selectAll("rect")
+      	.data(function(d) { return d; })
+    	.enter().append("rect")
+      	.attr("x", function(d) { return x(d.x); })
+      	.attr("y", function(d) { return y(d.y + d.y0); })
+      	.attr("height", function(d) { return y(d.y0) - y(d.y + d.y0); })
+      	.attr("width", x.rangeBand() - 1)
+      	.on("mouseover", function() { tooltip.style("display", null); })
+  		.on("mouseout", function() { tooltip.style("display", "none"); })
+  		.on("mousemove", function(d) {
+    		var xPosition = d3.mouse(this)[0] - 15;
+    		var yPosition = d3.mouse(this)[1] - 25;
+    		tooltip.attr("transform", "translate(" + xPosition + "," + yPosition + ")");
+    		tooltip.select("text").text(d.y);
+  		});
+
+
+  	svg.append("g")
+      	.attr("class", "axis axis--x")
+      	.attr("transform", "translate(0," + height + ")")
+      	.call(xAxis);
+
+  	svg.append("g")
+      	.attr("class", "axis axis--y")
+      	.attr("transform", "translate(0,0)")
+      	.call(yAxis);
+
+     //x-axis descriptor
+    svg.append("text")
+    	.attr("x", width/2)
+    	.attr("y", height+35)
+    	.text("Year");
+
+    //y-axis descriptor
+    svg.append("text")
+    	.attr("x", -height/2)
+    	.attr("y", -50)
+    	.attr("transform", "rotate(-90)")//x works as y and y works as x
+    	.text("Number of Incidents");
+
+    // Draw legend
+   	var colors = [];
+   	for(var i=0; i<2; ++i) {
+   		colors.push(z(i));
+   	}
+
+	var legend = svg.selectAll(".legend")
+  	.data(colors)//change colors
+  	.enter().append("g")
+  	.attr("class", "legend")
+  	.attr("transform", function(d, i) { return "translate(30," + i * 19 + ")"; });
+ 
+	legend.append("rect")
+  		.attr("x", width + 5)
+  		.attr("width", 18)
+  		.attr("height", 18)
+  		.style("fill", function(d, i) {return colors[i];});
+ 
+	legend.append("text")
+  		.attr("x", width + 30)
+  		.attr("y", 9)
+  		.attr("dy", ".35em")
+  		.style("text-anchor", "start")
+  		.text(function(d, i) { 
+    	switch (i) {
+      		case 0: return "Theft Under $500";
+      		case 1: return "Theft Over $500";
+    	}
+  });//legend
+
+
+  // Prep the tooltip bits, initial display is hidden
+	var tooltip = svg.append("g")
+  		.attr("class", "tooltip")
+  		.style("display", "none");
+    
+	tooltip.append("rect")
+  		.attr("width", 30)
+  		.attr("height", 20)
+  		.attr("fill", "white")
+  		.style("opacity", 0.5);
+
+	tooltip.append("text")
+  		.attr("x", 15)
+  		.attr("dy", "1.2em")
+  		.style("text-anchor", "middle")
+  		.attr("font-size", "12px")
+  		.attr("font-weight", "bold");
+
+});
