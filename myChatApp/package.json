@@ -1,0 +1,20 @@
+{
+  "name": "chat-server",
+  "version": "0.0.1",
+  "description": "My first application to build chat server. Serves multi-wall feauture in chats.",
+  "main": "server.js",
+  "scripts": {
+    "test": "null"
+  },
+  "keywords": [
+    "chat-server",
+    "multi-wall",
+    "facebook"
+  ],
+  "author": "Gaurav Kishore",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "socket.io": "^1.4.8"
+  }
+}

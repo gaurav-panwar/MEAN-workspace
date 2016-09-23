@@ -103,6 +103,34 @@
       .attr("dy", "0.35em")
       .style("font", "10px sans-serif")
       .text(function(d) { return d.id; });
+
+
+  // Draw legend
+    var colors = ['#1f77b4', '#ff7f0e'];
+
+  var legend = svg.selectAll(".legend")
+    .data(colors)//change colors
+    .enter().append("g")
+    .attr("class", "legend")
+    .attr("transform", function(d, i) { return "translate(30," + i * 19 + ")"; });
+ 
+  legend.append("rect")
+      .attr("x", width + 5)
+      .attr("width", 18)
+      .attr("height", 18)
+      .style("fill", function(d, i) {return colors[i];});
+ 
+  legend.append("text")
+      .attr("x", width + 30)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .style("text-anchor", "start")
+      .text(function(d, i) { 
+      switch (i) {
+          case 0: return "Arrest";
+          case 1: return "No Arrest";
+      }
+  });//legend
 });
 
 
