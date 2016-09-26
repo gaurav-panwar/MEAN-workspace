@@ -1,0 +1,31 @@
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Register Page</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.blue-deep_purple.min.css" />
+	</head>
+	<body align='center'>
+		<h1> Welcome New User</h1>
+		<h3> Register here</h3>
+		<form action='/users/register' align='center' method="post">
+			<input type="text" name="userName" id="userName" placeholder="User Name"/> <br><br>
+			<input type="password" name="userPass" id='userPass' placeholder="Password"/><br><br>
+			<input type="password" name="confirmPass" id='confirmPass' placeholder="Confirm Password"/><br><br>
+			<!-- <input type="text" name="name" id="name" placeholder="Name"/><br><br>
+			<input type="email" name="email" id="email" placeholder="Email Id"/><br><br>
+			<input type="number" name="phone" id="phone" maxlength="10" placeholder="Phone Number"><br><br> -->
+			<button type="submit">Register</button>
+			
+			<br><br>
+			<p>Already Registered? Click here to Login</p>
+			<button type="submit" formaction="/users/login" formmethod="get">Login</button>
+
+		</form>
+		
+
+			
+		<script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+	</body>
+	</html>

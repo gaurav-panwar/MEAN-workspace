@@ -1,0 +1,27 @@
+Registration Module } Back-seat for now (Parking Lot)
+	Local Strategy
+	OAuth 
+
+Express + Sockets + Streams 
+Mongoose - Data Save (Mongo ORM)
+
+Chats : 
+	- Save User wise Chats
+	- File Upload - Size Limits
+	- Emoji
+
+Whiteboard : (Owner, Friends)
+	- Text
+	- Svg images(draw)
+	- Initiate + Save 
+	- Multi-User
+
+
+Login 
+Registration
+Chat API
+
+Learn Mongoose
+
+
+

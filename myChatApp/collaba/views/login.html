@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Collaba Login</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.blue-deep_purple.min.css" />
+</head>
+<body align="center">
+	<h1>Login Page</h1>
+	<form action="/users/login" method="post">
+		<input type="text" name="userName" id="userName" placeholder="User Name"/> <br><br>
+		<input type="password" name="userPass" id="userPass" placeholder="Password"/><br><br>
+		<button type="submit">Login</button><br><br>
+
+		<p> New User? Register Here.</p>
+		<button type="submit" formaction="/users/register">Register</button>
+	</form>
+	<script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+</body>
+</html>

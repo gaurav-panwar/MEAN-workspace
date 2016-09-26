@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chat Window</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.blue-deep_purple.min.css" />
+</head>
+<body class="mdl-grid">
+	<h1>Collaba Chats</h1>
+	<main class="online-users" class="mdl-cell mdl-cell-4-col">
+		<h3>Online Users</h3>
+		<ul id='list-online'>
+		</ul>
+	</main>
+	<main class="chat-win" class="mdl-cell mdl-cell-8-col">
+		<ul id='chat-msg'></ul>
+		<form action="/users/chats" method="post" style="position:fixed; bottom:5px;" >
+			<input type="text" name="msg" id='msg' placeholder="Type a message" autofocus />
+			<button type="submit">Send</button>
+		</form>
+	</main>
+	<script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		var socket = io();
+
+	</script>
+</body>
+</html>
