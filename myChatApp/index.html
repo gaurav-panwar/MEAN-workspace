@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Chat Application</title>
+	<style type="text/css">
+		h1 {text-align: center;}
+		#messages {list-style-type:none; margin: 0; padding:0; }
+		#messages li {overflow: hidden; }
+		#messages li:nth-child(odd) {margin-left: 1%; background: #ff9999;}
+		#messages li:nth-child(even) { margin-left: 5%; background: #b3ffb3;}
+
+	</style>
+</head>
+<body>
+	<h3> MyChat</h3>
+	<ul id='messages'></ul>
+	<form>
+		<input type="text" name="msg" id='msg' autofocus autocomplete="off"/>
+		<button type="submit" id="sub">Send</button>
+	</form>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+	<script>
+  		var socket = io();
+			$('li').addClass('col-sm-6');
+			$('form').submit(function() {
+				socket.emit('Chat Message', $('#msg').val());
+				console.log('MyChat, New Message : ' + $('#msg').val());
+				//$('#messages').append('<li>' + $('#msg').val() + '</li>');
+				$('#msg').val('');
+				return false;
+			});
+			socket.on('Chat Message', function(msg) {
+				$('#messages').append($('<li>').text(msg));
+			});
+	</script>
+</body>
+</html>

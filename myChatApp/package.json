@@ -1,20 +1,18 @@
 {
-  "name": "chat-server",
-  "version": "0.0.1",
-  "description": "My first application to build chat server. Serves multi-wall feauture in chats.",
-  "main": "server.js",
+  "name": "myChatApp",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "null"
+    "start": "node ./bin/www"
   },
-  "keywords": [
-    "chat-server",
-    "multi-wall",
-    "facebook"
-  ],
-  "author": "Gaurav Kishore",
-  "license": "ISC",
   "dependencies": {
+    "body-parser": "~1.15.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
     "express": "^4.14.0",
+    "jade": "~1.11.0",
+    "morgan": "~1.7.0",
+    "serve-favicon": "~2.3.0",
     "socket.io": "^1.4.8"
   }
 }

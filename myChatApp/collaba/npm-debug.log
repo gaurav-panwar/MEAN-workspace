@@ -1,0 +1,810 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'socket',
+1 verbose cli   '--save' ]
+2 info using npm@3.10.3
+3 info using node@v6.6.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData socket
+8 silly fetchNamedPackageData socket
+9 silly mapToRegistry name socket
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry data Result {
+12 silly mapToRegistry   raw: 'socket',
+12 silly mapToRegistry   scope: null,
+12 silly mapToRegistry   escapedName: 'socket',
+12 silly mapToRegistry   name: 'socket',
+12 silly mapToRegistry   rawSpec: '',
+12 silly mapToRegistry   spec: 'latest',
+12 silly mapToRegistry   type: 'tag' }
+13 silly mapToRegistry uri https://registry.npmjs.org/socket
+14 verbose request uri https://registry.npmjs.org/socket
+15 verbose request no auth needed
+16 info attempt registry request try #1 at 10:11:37 AM
+17 verbose request id 769fa48bffa870db
+18 http request GET https://registry.npmjs.org/socket
+19 http 200 https://registry.npmjs.org/socket
+20 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+20 verbose headers   etag: '"368QAD6FWDSRRSF0K2VF00IA6"',
+20 verbose headers   'content-type': 'application/json',
+20 verbose headers   'content-encoding': 'gzip',
+20 verbose headers   'cache-control': 'max-age=300',
+20 verbose headers   'content-length': '666',
+20 verbose headers   'accept-ranges': 'bytes',
+20 verbose headers   date: 'Fri, 23 Sep 2016 10:11:38 GMT',
+20 verbose headers   via: '1.1 varnish',
+20 verbose headers   age: '0',
+20 verbose headers   connection: 'keep-alive',
+20 verbose headers   'x-served-by': 'cache-sin6923-SIN',
+20 verbose headers   'x-cache': 'MISS',
+20 verbose headers   'x-cache-hits': '0',
+20 verbose headers   'x-timer': 'S1474625498.390690,VS0,VE220',
+20 verbose headers   vary: 'Accept-Encoding' }
+21 silly get cb [ 200,
+21 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+21 silly get     etag: '"368QAD6FWDSRRSF0K2VF00IA6"',
+21 silly get     'content-type': 'application/json',
+21 silly get     'content-encoding': 'gzip',
+21 silly get     'cache-control': 'max-age=300',
+21 silly get     'content-length': '666',
+21 silly get     'accept-ranges': 'bytes',
+21 silly get     date: 'Fri, 23 Sep 2016 10:11:38 GMT',
+21 silly get     via: '1.1 varnish',
+21 silly get     age: '0',
+21 silly get     connection: 'keep-alive',
+21 silly get     'x-served-by': 'cache-sin6923-SIN',
+21 silly get     'x-cache': 'MISS',
+21 silly get     'x-cache-hits': '0',
+21 silly get     'x-timer': 'S1474625498.390690,VS0,VE220',
+21 silly get     vary: 'Accept-Encoding' } ]
+22 verbose get saving socket to /home/vagrant/.npm/registry.npmjs.org/socket/.cache.json
+23 verbose correctMkdir /home/vagrant/.npm correctMkdir not in flight; initializing
+24 silly install normalizeTree
+25 silly loadCurrentTree Finishing
+26 silly loadIdealTree Starting
+27 silly install loadIdealTree
+28 silly cloneCurrentTree Starting
+29 silly install cloneCurrentTreeToIdealTree
+30 silly cloneCurrentTree Finishing
+31 silly loadShrinkwrap Starting
+32 silly install loadShrinkwrap
+33 silly loadShrinkwrap Finishing
+34 silly loadAllDepsIntoIdealTree Starting
+35 silly install loadAllDepsIntoIdealTree
+36 silly resolveWithNewModule socket@0.0.1 checking installable status
+37 silly cache add args [ 'socket', null ]
+38 verbose cache add spec socket
+39 silly cache add parsed spec Result {
+39 silly cache add   raw: 'socket',
+39 silly cache add   scope: null,
+39 silly cache add   escapedName: 'socket',
+39 silly cache add   name: 'socket',
+39 silly cache add   rawSpec: '',
+39 silly cache add   spec: 'latest',
+39 silly cache add   type: 'tag' }
+40 silly addNamed socket@latest
+41 verbose addNamed "latest" is being treated as a dist-tag for socket
+42 info addNameTag [ 'socket', 'latest' ]
+43 silly mapToRegistry name socket
+44 silly mapToRegistry using default registry
+45 silly mapToRegistry registry https://registry.npmjs.org/
+46 silly mapToRegistry data Result {
+46 silly mapToRegistry   raw: 'socket',
+46 silly mapToRegistry   scope: null,
+46 silly mapToRegistry   escapedName: 'socket',
+46 silly mapToRegistry   name: 'socket',
+46 silly mapToRegistry   rawSpec: '',
+46 silly mapToRegistry   spec: 'latest',
+46 silly mapToRegistry   type: 'tag' }
+47 silly mapToRegistry uri https://registry.npmjs.org/socket
+48 verbose addNameTag registry:https://registry.npmjs.org/socket not in flight; fetching
+49 verbose get https://registry.npmjs.org/socket not expired, no request
+50 silly addNameTag next cb for socket with tag latest
+51 silly addNamed socket@0.0.1
+52 verbose addNamed "0.0.1" is a plain semver version for socket
+53 silly mapToRegistry name socket
+54 silly mapToRegistry using default registry
+55 silly mapToRegistry registry https://registry.npmjs.org/
+56 silly mapToRegistry data Result {
+56 silly mapToRegistry   raw: 'socket',
+56 silly mapToRegistry   scope: null,
+56 silly mapToRegistry   escapedName: 'socket',
+56 silly mapToRegistry   name: 'socket',
+56 silly mapToRegistry   rawSpec: '',
+56 silly mapToRegistry   spec: 'latest',
+56 silly mapToRegistry   type: 'tag' }
+57 silly mapToRegistry uri https://registry.npmjs.org/socket
+58 verbose addRemoteTarball https://registry.npmjs.org/socket/-/socket-0.0.1.tgz not in flight; adding
+59 verbose addRemoteTarball [ 'https://registry.npmjs.org/socket/-/socket-0.0.1.tgz',
+59 verbose addRemoteTarball   '29ac6549f15a65b19f3444a4178d537a8c161a8b' ]
+60 info retry fetch attempt 1 at 10:11:38 AM
+61 info attempt registry request try #1 at 10:11:38 AM
+62 http fetch GET https://registry.npmjs.org/socket/-/socket-0.0.1.tgz
+63 http fetch 200 https://registry.npmjs.org/socket/-/socket-0.0.1.tgz
+64 silly fetchAndShaCheck shasum 29ac6549f15a65b19f3444a4178d537a8c161a8b
+65 verbose addTmpTarball /tmp/npm-3183-ca8141d8/registry.npmjs.org/socket/-/socket-0.0.1.tgz not in flight; adding
+66 verbose addTmpTarball already have metadata; skipping unpack for socket@0.0.1
+67 verbose correctMkdir /home/vagrant/.npm correctMkdir not in flight; initializing
+68 silly cache afterAdd socket@0.0.1
+69 verbose afterAdd /home/vagrant/.npm/socket/0.0.1/package/package.json not in flight; writing
+70 verbose correctMkdir /home/vagrant/.npm correctMkdir not in flight; initializing
+71 verbose afterAdd /home/vagrant/.npm/socket/0.0.1/package/package.json written
+72 silly fetchNamedPackageData microtime
+73 silly mapToRegistry name microtime
+74 silly mapToRegistry using default registry
+75 silly mapToRegistry registry https://registry.npmjs.org/
+76 silly mapToRegistry data Result {
+76 silly mapToRegistry   raw: 'microtime',
+76 silly mapToRegistry   scope: null,
+76 silly mapToRegistry   escapedName: 'microtime',
+76 silly mapToRegistry   name: 'microtime',
+76 silly mapToRegistry   rawSpec: '',
+76 silly mapToRegistry   spec: 'latest',
+76 silly mapToRegistry   type: 'tag' }
+77 silly mapToRegistry uri https://registry.npmjs.org/microtime
+78 verbose request uri https://registry.npmjs.org/microtime
+79 verbose request no auth needed
+80 info attempt registry request try #1 at 10:11:39 AM
+81 http request GET https://registry.npmjs.org/microtime
+82 http 200 https://registry.npmjs.org/microtime
+83 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+83 verbose headers   etag: '"87SNWA36BXNBHOO7DR4Z9L6SV"',
+83 verbose headers   'content-type': 'application/json',
+83 verbose headers   'content-encoding': 'gzip',
+83 verbose headers   'cache-control': 'max-age=300',
+83 verbose headers   'content-length': '4901',
+83 verbose headers   'accept-ranges': 'bytes',
+83 verbose headers   date: 'Fri, 23 Sep 2016 10:11:39 GMT',
+83 verbose headers   via: '1.1 varnish',
+83 verbose headers   age: '156',
+83 verbose headers   connection: 'keep-alive',
+83 verbose headers   'x-served-by': 'cache-sin6923-SIN',
+83 verbose headers   'x-cache': 'HIT',
+83 verbose headers   'x-cache-hits': '54',
+83 verbose headers   'x-timer': 'S1474625499.401973,VS0,VE0',
+83 verbose headers   vary: 'Accept-Encoding' }
+84 silly get cb [ 200,
+84 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+84 silly get     etag: '"87SNWA36BXNBHOO7DR4Z9L6SV"',
+84 silly get     'content-type': 'application/json',
+84 silly get     'content-encoding': 'gzip',
+84 silly get     'cache-control': 'max-age=300',
+84 silly get     'content-length': '4901',
+84 silly get     'accept-ranges': 'bytes',
+84 silly get     date: 'Fri, 23 Sep 2016 10:11:39 GMT',
+84 silly get     via: '1.1 varnish',
+84 silly get     age: '156',
+84 silly get     connection: 'keep-alive',
+84 silly get     'x-served-by': 'cache-sin6923-SIN',
+84 silly get     'x-cache': 'HIT',
+84 silly get     'x-cache-hits': '54',
+84 silly get     'x-timer': 'S1474625499.401973,VS0,VE0',
+84 silly get     vary: 'Accept-Encoding' } ]
+85 verbose get saving microtime to /home/vagrant/.npm/registry.npmjs.org/microtime/.cache.json
+86 verbose correctMkdir /home/vagrant/.npm correctMkdir not in flight; initializing
+87 silly resolveWithNewModule microtime@0.2.0 checking installable status
+88 silly cache add args [ 'microtime@=0.2.0', null ]
+89 verbose cache add spec microtime@=0.2.0
+90 silly cache add parsed spec Result {
+90 silly cache add   raw: 'microtime@=0.2.0',
+90 silly cache add   scope: null,
+90 silly cache add   escapedName: 'microtime',
+90 silly cache add   name: 'microtime',
+90 silly cache add   rawSpec: '=0.2.0',
+90 silly cache add   spec: '0.2.0',
+90 silly cache add   type: 'version' }
+91 silly addNamed microtime@0.2.0
+92 verbose addNamed "0.2.0" is a plain semver version for microtime
+93 silly mapToRegistry name microtime
+94 silly mapToRegistry using default registry
+95 silly mapToRegistry registry https://registry.npmjs.org/
+96 silly mapToRegistry data Result {
+96 silly mapToRegistry   raw: 'microtime',
+96 silly mapToRegistry   scope: null,
+96 silly mapToRegistry   escapedName: 'microtime',
+96 silly mapToRegistry   name: 'microtime',
+96 silly mapToRegistry   rawSpec: '',
+96 silly mapToRegistry   spec: 'latest',
+96 silly mapToRegistry   type: 'tag' }
+97 silly mapToRegistry uri https://registry.npmjs.org/microtime
+98 verbose addNameVersion registry:https://registry.npmjs.org/microtime not in flight; fetching
+99 verbose get https://registry.npmjs.org/microtime not expired, no request
+100 silly mapToRegistry name microtime
+101 silly mapToRegistry using default registry
+102 silly mapToRegistry registry https://registry.npmjs.org/
+103 silly mapToRegistry data Result {
+103 silly mapToRegistry   raw: 'microtime',
+103 silly mapToRegistry   scope: null,
+103 silly mapToRegistry   escapedName: 'microtime',
+103 silly mapToRegistry   name: 'microtime',
+103 silly mapToRegistry   rawSpec: '',
+103 silly mapToRegistry   spec: 'latest',
+103 silly mapToRegistry   type: 'tag' }
+104 silly mapToRegistry uri https://registry.npmjs.org/microtime
+105 verbose addRemoteTarball https://registry.npmjs.org/microtime/-/microtime-0.2.0.tgz not in flight; adding
+106 verbose addRemoteTarball [ 'https://registry.npmjs.org/microtime/-/microtime-0.2.0.tgz',
+106 verbose addRemoteTarball   '45ee5cb061f9948a3ade221e620d5117a8a2bdb4' ]
+107 info retry fetch attempt 1 at 10:11:39 AM
+108 info attempt registry request try #1 at 10:11:39 AM
+109 http fetch GET https://registry.npmjs.org/microtime/-/microtime-0.2.0.tgz
+110 http fetch 200 https://registry.npmjs.org/microtime/-/microtime-0.2.0.tgz
+111 silly fetchAndShaCheck shasum 45ee5cb061f9948a3ade221e620d5117a8a2bdb4
+112 verbose addTmpTarball /tmp/npm-3183-ca8141d8/registry.npmjs.org/microtime/-/microtime-0.2.0.tgz not in flight; adding
+113 verbose addTmpTarball already have metadata; skipping unpack for microtime@0.2.0
+114 verbose correctMkdir /home/vagrant/.npm correctMkdir not in flight; initializing
+115 silly cache afterAdd microtime@0.2.0
+116 verbose afterAdd /home/vagrant/.npm/microtime/0.2.0/package/package.json not in flight; writing
+117 verbose correctMkdir /home/vagrant/.npm correctMkdir not in flight; initializing
+118 verbose afterAdd /home/vagrant/.npm/microtime/0.2.0/package/package.json written
+119 silly fetchNamedPackageData acorn
+120 silly mapToRegistry name acorn
+121 silly mapToRegistry using default registry
+122 silly mapToRegistry registry https://registry.npmjs.org/
+123 silly mapToRegistry data Result {
+123 silly mapToRegistry   raw: 'acorn',
+123 silly mapToRegistry   scope: null,
+123 silly mapToRegistry   escapedName: 'acorn',
+123 silly mapToRegistry   name: 'acorn',
+123 silly mapToRegistry   rawSpec: '',
+123 silly mapToRegistry   spec: 'latest',
+123 silly mapToRegistry   type: 'tag' }
+124 silly mapToRegistry uri https://registry.npmjs.org/acorn
+125 verbose request uri https://registry.npmjs.org/acorn
+126 verbose request no auth needed
+127 info attempt registry request try #1 at 10:11:39 AM
+128 verbose etag "8NK7KBNZP9BN8P96CDUCTIU5W"
+129 http request GET https://registry.npmjs.org/acorn
+130 http 304 https://registry.npmjs.org/acorn
+131 verbose headers { date: 'Fri, 23 Sep 2016 10:11:40 GMT',
+131 verbose headers   via: '1.1 varnish',
+131 verbose headers   'cache-control': 'max-age=300',
+131 verbose headers   etag: '"8NK7KBNZP9BN8P96CDUCTIU5W"',
+131 verbose headers   age: '82',
+131 verbose headers   connection: 'keep-alive',
+131 verbose headers   'x-served-by': 'cache-sin6923-SIN',
+131 verbose headers   'x-cache': 'HIT',
+131 verbose headers   'x-cache-hits': '4',
+131 verbose headers   'x-timer': 'S1474625500.181997,VS0,VE0',
+131 verbose headers   vary: 'Accept-Encoding' }
+132 silly get cb [ 304,
+132 silly get   { date: 'Fri, 23 Sep 2016 10:11:40 GMT',
+132 silly get     via: '1.1 varnish',
+132 silly get     'cache-control': 'max-age=300',
+132 silly get     etag: '"8NK7KBNZP9BN8P96CDUCTIU5W"',
+132 silly get     age: '82',
+132 silly get     connection: 'keep-alive',
+132 silly get     'x-served-by': 'cache-sin6923-SIN',
+132 silly get     'x-cache': 'HIT',
+132 silly get     'x-cache-hits': '4',
+132 silly get     'x-timer': 'S1474625500.181997,VS0,VE0',
+132 silly get     vary: 'Accept-Encoding' } ]
+133 verbose etag https://registry.npmjs.org/acorn from cache
+134 verbose get saving acorn to /home/vagrant/.npm/registry.npmjs.org/acorn/.cache.json
+135 verbose correctMkdir /home/vagrant/.npm correctMkdir not in flight; initializing
+136 silly resolveWithNewModule acorn@2.7.0 checking installable status
+137 silly cache add args [ 'acorn@^2.1.0', null ]
+138 verbose cache add spec acorn@^2.1.0
+139 silly cache add parsed spec Result {
+139 silly cache add   raw: 'acorn@^2.1.0',
+139 silly cache add   scope: null,
+139 silly cache add   escapedName: 'acorn',
+139 silly cache add   name: 'acorn',
+139 silly cache add   rawSpec: '^2.1.0',
+139 silly cache add   spec: '>=2.1.0 <3.0.0',
+139 silly cache add   type: 'range' }
+140 silly addNamed acorn@>=2.1.0 <3.0.0
+141 verbose addNamed ">=2.1.0 <3.0.0" is a valid semver range for acorn
+142 silly addNameRange { name: 'acorn', range: '>=2.1.0 <3.0.0', hasData: false }
+143 silly mapToRegistry name acorn
+144 silly mapToRegistry using default registry
+145 silly mapToRegistry registry https://registry.npmjs.org/
+146 silly mapToRegistry data Result {
+146 silly mapToRegistry   raw: 'acorn',
+146 silly mapToRegistry   scope: null,
+146 silly mapToRegistry   escapedName: 'acorn',
+146 silly mapToRegistry   name: 'acorn',
+146 silly mapToRegistry   rawSpec: '',
+146 silly mapToRegistry   spec: 'latest',
+146 silly mapToRegistry   type: 'tag' }
+147 silly mapToRegistry uri https://registry.npmjs.org/acorn
+148 verbose addNameRange registry:https://registry.npmjs.org/acorn not in flight; fetching
+149 verbose get https://registry.npmjs.org/acorn not expired, no request
+150 silly addNameRange number 2 { name: 'acorn', range: '>=2.1.0 <3.0.0', hasData: true }
+151 silly addNameRange versions [ 'acorn',
+151 silly addNameRange   [ '0.0.1',
+151 silly addNameRange     '0.1.0',
+151 silly addNameRange     '0.2.0',
+151 silly addNameRange     '0.3.0',
+151 silly addNameRange     '0.3.1',
+151 silly addNameRange     '0.4.0',
+151 silly addNameRange     '0.4.2',
+151 silly addNameRange     '0.5.0',
+151 silly addNameRange     '0.6.0',
+151 silly addNameRange     '0.7.0',
+151 silly addNameRange     '0.8.0',
+151 silly addNameRange     '0.9.0',
+151 silly addNameRange     '0.10.0',
+151 silly addNameRange     '0.11.0',
+151 silly addNameRange     '0.12.0',
+151 silly addNameRange     '1.0.0',
+151 silly addNameRange     '1.0.1',
+151 silly addNameRange     '1.0.3',
+151 silly addNameRange     '1.1.0',
+151 silly addNameRange     '1.2.0',
+151 silly addNameRange     '2.0.0',
+151 silly addNameRange     '1.2.1',
+151 silly addNameRange     '2.0.1',
+151 silly addNameRange     '1.2.2',
+151 silly addNameRange     '2.0.4',
+151 silly addNameRange     '2.1.0',
+151 silly addNameRange     '2.2.0',
+151 silly addNameRange     '2.3.0',
+151 silly addNameRange     '2.4.0',
+151 silly addNameRange     '2.5.0',
+151 silly addNameRange     '2.5.2',
+151 silly addNameRange     '2.6.0',
+151 silly addNameRange     '2.6.2',
+151 silly addNameRange     '2.6.4',
+151 silly addNameRange     '2.7.0',
+151 silly addNameRange     '3.0.0',
+151 silly addNameRange     '3.0.2',
+151 silly addNameRange     '3.0.4',
+151 silly addNameRange     '3.1.0',
+151 silly addNameRange     '3.2.0',
+151 silly addNameRange     '3.3.0',
+151 silly addNameRange     '4.0.0',
+151 silly addNameRange     '4.0.1',
+151 silly addNameRange     '4.0.2',
+151 silly addNameRange     '4.0.3' ] ]
+152 silly addNamed acorn@2.7.0
+153 verbose addNamed "2.7.0" is a plain semver version for acorn
+154 silly cache afterAdd acorn@2.7.0
+155 verbose afterAdd /home/vagrant/.npm/acorn/2.7.0/package/package.json not in flight; writing
+156 verbose correctMkdir /home/vagrant/.npm correctMkdir not in flight; initializing
+157 verbose afterAdd /home/vagrant/.npm/acorn/2.7.0/package/package.json written
+158 silly loadAllDepsIntoIdealTree Finishing
+159 silly loadIdealTree Finishing
+160 silly currentTree collaba@0.0.0
+160 silly currentTree +-- accepts@1.2.13
+160 silly currentTree +-- acorn-globals@1.0.9
+160 silly currentTree +-- align-text@0.1.4
+160 silly currentTree +-- amdefine@1.0.0
+160 silly currentTree +-- array-flatten@1.1.1
+160 silly currentTree +-- asap@1.0.0
+160 silly currentTree +-- async@0.2.10
+160 silly currentTree +-- basic-auth@1.0.4
+160 silly currentTree +-- body-parser@1.15.2
+160 silly currentTree +-- bytes@2.4.0
+160 silly currentTree +-- camelcase@1.2.1
+160 silly currentTree +-- center-align@0.1.3
+160 silly currentTree +-- character-parser@1.2.1
+160 silly currentTree +-- clean-css@3.4.19
+160 silly currentTree | `-- commander@2.8.1
+160 silly currentTree +-- cliui@2.1.0
+160 silly currentTree | `-- wordwrap@0.0.2
+160 silly currentTree +-- commander@2.6.0
+160 silly currentTree +-- content-disposition@0.5.1
+160 silly currentTree +-- content-type@1.0.2
+160 silly currentTree +-- cookie-parser@1.4.3
+160 silly currentTree +-- cookie-signature@1.0.6
+160 silly currentTree +-- cookie@0.3.1
+160 silly currentTree +-- css-parse@1.0.4
+160 silly currentTree +-- css-stringify@1.0.5
+160 silly currentTree +-- css@1.0.8
+160 silly currentTree +-- debug@2.2.0
+160 silly currentTree +-- decamelize@1.2.0
+160 silly currentTree +-- depd@1.1.0
+160 silly currentTree +-- destroy@1.0.4
+160 silly currentTree +-- ee-first@1.1.1
+160 silly currentTree +-- escape-html@1.0.3
+160 silly currentTree +-- etag@1.7.0
+160 silly currentTree +-- express@4.13.4
+160 silly currentTree | +-- cookie@0.1.5
+160 silly currentTree | `-- qs@4.0.0
+160 silly currentTree +-- finalhandler@0.4.1
+160 silly currentTree +-- forwarded@0.1.0
+160 silly currentTree +-- fresh@0.3.0
+160 silly currentTree +-- graceful-readlink@1.0.1
+160 silly currentTree +-- http-errors@1.5.0
+160 silly currentTree +-- iconv-lite@0.4.13
+160 silly currentTree +-- inherits@2.0.1
+160 silly currentTree +-- ipaddr.js@1.0.5
+160 silly currentTree +-- is-buffer@1.1.4
+160 silly currentTree +-- is-promise@2.1.0
+160 silly currentTree +-- jstransformer@0.0.2
+160 silly currentTree +-- kind-of@3.0.4
+160 silly currentTree +-- lazy-cache@1.0.4
+160 silly currentTree +-- longest@1.0.1
+160 silly currentTree +-- media-typer@0.3.0
+160 silly currentTree +-- merge-descriptors@1.0.1
+160 silly currentTree +-- methods@1.1.2
+160 silly currentTree +-- mime-db@1.24.0
+160 silly currentTree +-- mime-types@2.1.12
+160 silly currentTree +-- mime@1.3.4
+160 silly currentTree +-- minimist@0.0.8
+160 silly currentTree +-- mkdirp@0.5.1
+160 silly currentTree +-- morgan@1.7.0
+160 silly currentTree +-- ms@0.7.1
+160 silly currentTree +-- negotiator@0.5.3
+160 silly currentTree +-- on-finished@2.3.0
+160 silly currentTree +-- on-headers@1.0.1
+160 silly currentTree +-- optimist@0.3.7
+160 silly currentTree +-- parseurl@1.3.1
+160 silly currentTree +-- path-to-regexp@0.1.7
+160 silly currentTree +-- promise@6.1.0
+160 silly currentTree +-- proxy-addr@1.0.10
+160 silly currentTree +-- qs@6.2.0
+160 silly currentTree +-- range-parser@1.0.3
+160 silly currentTree +-- raw-body@2.1.7
+160 silly currentTree +-- repeat-string@1.5.4
+160 silly currentTree +-- right-align@0.1.3
+160 silly currentTree +-- send@0.13.1
+160 silly currentTree | +-- http-errors@1.3.1
+160 silly currentTree | `-- statuses@1.2.1
+160 silly currentTree +-- serve-favicon@2.3.0
+160 silly currentTree +-- serve-static@1.10.3
+160 silly currentTree | +-- http-errors@1.3.1
+160 silly currentTree | +-- send@0.13.2
+160 silly currentTree | `-- statuses@1.2.1
+160 silly currentTree +-- setprototypeof@1.0.1
+160 silly currentTree +-- source-map@0.4.4
+160 silly currentTree +-- statuses@1.3.0
+160 silly currentTree +-- transformers@2.1.0
+160 silly currentTree | +-- is-promise@1.0.1
+160 silly currentTree | +-- promise@2.0.0
+160 silly currentTree | +-- source-map@0.1.43
+160 silly currentTree | `-- uglify-js@2.2.5
+160 silly currentTree +-- type-is@1.6.13
+160 silly currentTree +-- uglify-js@2.7.3
+160 silly currentTree | `-- source-map@0.5.6
+160 silly currentTree +-- uglify-to-browserify@1.0.2
+160 silly currentTree +-- unpipe@1.0.0
+160 silly currentTree +-- utils-merge@1.0.0
+160 silly currentTree +-- vary@1.0.1
+160 silly currentTree +-- void-elements@2.0.1
+160 silly currentTree +-- window-size@0.1.0
+160 silly currentTree +-- with@4.0.3
+160 silly currentTree | `-- acorn@1.2.2
+160 silly currentTree +-- wordwrap@0.0.3
+160 silly currentTree `-- yargs@3.10.0
+161 silly idealTree collaba@0.0.0
+161 silly idealTree +-- accepts@1.2.13
+161 silly idealTree +-- acorn-globals@1.0.9
+161 silly idealTree +-- acorn@2.7.0
+161 silly idealTree +-- align-text@0.1.4
+161 silly idealTree +-- amdefine@1.0.0
+161 silly idealTree +-- array-flatten@1.1.1
+161 silly idealTree +-- asap@1.0.0
+161 silly idealTree +-- async@0.2.10
+161 silly idealTree +-- basic-auth@1.0.4
+161 silly idealTree +-- body-parser@1.15.2
+161 silly idealTree +-- bytes@2.4.0
+161 silly idealTree +-- camelcase@1.2.1
+161 silly idealTree +-- center-align@0.1.3
+161 silly idealTree +-- character-parser@1.2.1
+161 silly idealTree +-- clean-css@3.4.19
+161 silly idealTree | `-- commander@2.8.1
+161 silly idealTree +-- cliui@2.1.0
+161 silly idealTree | `-- wordwrap@0.0.2
+161 silly idealTree +-- commander@2.6.0
+161 silly idealTree +-- content-disposition@0.5.1
+161 silly idealTree +-- content-type@1.0.2
+161 silly idealTree +-- cookie-parser@1.4.3
+161 silly idealTree +-- cookie-signature@1.0.6
+161 silly idealTree +-- cookie@0.3.1
+161 silly idealTree +-- css-parse@1.0.4
+161 silly idealTree +-- css-stringify@1.0.5
+161 silly idealTree +-- css@1.0.8
+161 silly idealTree +-- debug@2.2.0
+161 silly idealTree +-- decamelize@1.2.0
+161 silly idealTree +-- depd@1.1.0
+161 silly idealTree +-- destroy@1.0.4
+161 silly idealTree +-- ee-first@1.1.1
+161 silly idealTree +-- escape-html@1.0.3
+161 silly idealTree +-- etag@1.7.0
+161 silly idealTree +-- express@4.13.4
+161 silly idealTree | +-- cookie@0.1.5
+161 silly idealTree | `-- qs@4.0.0
+161 silly idealTree +-- finalhandler@0.4.1
+161 silly idealTree +-- forwarded@0.1.0
+161 silly idealTree +-- fresh@0.3.0
+161 silly idealTree +-- graceful-readlink@1.0.1
+161 silly idealTree +-- http-errors@1.5.0
+161 silly idealTree +-- iconv-lite@0.4.13
+161 silly idealTree +-- inherits@2.0.1
+161 silly idealTree +-- ipaddr.js@1.0.5
+161 silly idealTree +-- is-buffer@1.1.4
+161 silly idealTree +-- is-promise@2.1.0
+161 silly idealTree +-- jstransformer@0.0.2
+161 silly idealTree +-- kind-of@3.0.4
+161 silly idealTree +-- lazy-cache@1.0.4
+161 silly idealTree +-- longest@1.0.1
+161 silly idealTree +-- media-typer@0.3.0
+161 silly idealTree +-- merge-descriptors@1.0.1
+161 silly idealTree +-- methods@1.1.2
+161 silly idealTree +-- microtime@0.2.0
+161 silly idealTree +-- mime-db@1.24.0
+161 silly idealTree +-- mime-types@2.1.12
+161 silly idealTree +-- mime@1.3.4
+161 silly idealTree +-- minimist@0.0.8
+161 silly idealTree +-- mkdirp@0.5.1
+161 silly idealTree +-- morgan@1.7.0
+161 silly idealTree +-- ms@0.7.1
+161 silly idealTree +-- negotiator@0.5.3
+161 silly idealTree +-- on-finished@2.3.0
+161 silly idealTree +-- on-headers@1.0.1
+161 silly idealTree +-- optimist@0.3.7
+161 silly idealTree +-- parseurl@1.3.1
+161 silly idealTree +-- path-to-regexp@0.1.7
+161 silly idealTree +-- promise@6.1.0
+161 silly idealTree +-- proxy-addr@1.0.10
+161 silly idealTree +-- qs@6.2.0
+161 silly idealTree +-- range-parser@1.0.3
+161 silly idealTree +-- raw-body@2.1.7
+161 silly idealTree +-- repeat-string@1.5.4
+161 silly idealTree +-- right-align@0.1.3
+161 silly idealTree +-- send@0.13.1
+161 silly idealTree | +-- http-errors@1.3.1
+161 silly idealTree | `-- statuses@1.2.1
+161 silly idealTree +-- serve-favicon@2.3.0
+161 silly idealTree +-- serve-static@1.10.3
+161 silly idealTree | +-- http-errors@1.3.1
+161 silly idealTree | +-- send@0.13.2
+161 silly idealTree | `-- statuses@1.2.1
+161 silly idealTree +-- setprototypeof@1.0.1
+161 silly idealTree +-- socket@0.0.1
+161 silly idealTree +-- source-map@0.4.4
+161 silly idealTree +-- statuses@1.3.0
+161 silly idealTree +-- transformers@2.1.0
+161 silly idealTree | +-- is-promise@1.0.1
+161 silly idealTree | +-- promise@2.0.0
+161 silly idealTree | +-- source-map@0.1.43
+161 silly idealTree | `-- uglify-js@2.2.5
+161 silly idealTree +-- type-is@1.6.13
+161 silly idealTree +-- uglify-js@2.7.3
+161 silly idealTree | `-- source-map@0.5.6
+161 silly idealTree +-- uglify-to-browserify@1.0.2
+161 silly idealTree +-- unpipe@1.0.0
+161 silly idealTree +-- utils-merge@1.0.0
+161 silly idealTree +-- vary@1.0.1
+161 silly idealTree +-- void-elements@2.0.1
+161 silly idealTree +-- window-size@0.1.0
+161 silly idealTree +-- with@4.0.3
+161 silly idealTree | `-- acorn@1.2.2
+161 silly idealTree +-- wordwrap@0.0.3
+161 silly idealTree `-- yargs@3.10.0
+162 silly generateActionsToTake Starting
+163 silly install generateActionsToTake
+164 silly generateActionsToTake Finishing
+165 silly diffTrees action count 3
+166 silly diffTrees add acorn@2.7.0
+167 silly diffTrees add microtime@0.2.0
+168 silly diffTrees add socket@0.0.1
+169 silly decomposeActions action count 24
+170 silly decomposeActions fetch acorn@2.7.0
+171 silly decomposeActions extract acorn@2.7.0
+172 silly decomposeActions test acorn@2.7.0
+173 silly decomposeActions preinstall acorn@2.7.0
+174 silly decomposeActions build acorn@2.7.0
+175 silly decomposeActions install acorn@2.7.0
+176 silly decomposeActions postinstall acorn@2.7.0
+177 silly decomposeActions finalize acorn@2.7.0
+178 silly decomposeActions fetch microtime@0.2.0
+179 silly decomposeActions extract microtime@0.2.0
+180 silly decomposeActions test microtime@0.2.0
+181 silly decomposeActions preinstall microtime@0.2.0
+182 silly decomposeActions build microtime@0.2.0
+183 silly decomposeActions install microtime@0.2.0
+184 silly decomposeActions postinstall microtime@0.2.0
+185 silly decomposeActions finalize microtime@0.2.0
+186 silly decomposeActions fetch socket@0.0.1
+187 silly decomposeActions extract socket@0.0.1
+188 silly decomposeActions test socket@0.0.1
+189 silly decomposeActions preinstall socket@0.0.1
+190 silly decomposeActions build socket@0.0.1
+191 silly decomposeActions install socket@0.0.1
+192 silly decomposeActions postinstall socket@0.0.1
+193 silly decomposeActions finalize socket@0.0.1
+194 silly executeActions Starting
+195 silly install executeActions
+196 silly doSerial global-install 0
+197 silly doParallel fetch 3
+198 verbose correctMkdir /home/vagrant/.npm/_locks correctMkdir not in flight; initializing
+199 verbose lock using /home/vagrant/.npm/_locks/staging-6eb66b02256a7e68.lock for /vagrant/MEANworkspace/myChatApp/collaba/node_modules/.staging
+200 silly doParallel extract 3
+201 silly extract acorn@2.7.0
+202 silly extract microtime@0.2.0
+203 silly extract socket@0.0.1
+204 verbose unbuild node_modules/.staging/microtime-ca4f8baa
+205 verbose unbuild node_modules/.staging/socket-ee36d1bf
+206 verbose unbuild node_modules/.staging/acorn-ef079ca2
+207 silly gentlyRm /vagrant/MEANworkspace/myChatApp/collaba/node_modules/.staging/microtime-ca4f8baa is being purged from base /vagrant/MEANworkspace/myChatApp/collaba
+208 verbose gentlyRm don't care about contents; nuking /vagrant/MEANworkspace/myChatApp/collaba/node_modules/.staging/microtime-ca4f8baa
+209 silly gentlyRm /vagrant/MEANworkspace/myChatApp/collaba/node_modules/.staging/socket-ee36d1bf is being purged from base /vagrant/MEANworkspace/myChatApp/collaba
+210 verbose gentlyRm don't care about contents; nuking /vagrant/MEANworkspace/myChatApp/collaba/node_modules/.staging/socket-ee36d1bf
+211 silly gentlyRm /vagrant/MEANworkspace/myChatApp/collaba/node_modules/.staging/acorn-ef079ca2 is being purged from base /vagrant/MEANworkspace/myChatApp/collaba
+212 verbose gentlyRm don't care about contents; nuking /vagrant/MEANworkspace/myChatApp/collaba/node_modules/.staging/acorn-ef079ca2
+213 verbose tar unpack /home/vagrant/.npm/microtime/0.2.0/package.tgz
+214 verbose tar unpacking to /vagrant/MEANworkspace/myChatApp/collaba/node_modules/.staging/microtime-ca4f8baa
+215 silly gentlyRm /vagrant/MEANworkspace/myChatApp/collaba/node_modules/.staging/microtime-ca4f8baa is being purged
+216 verbose gentlyRm don't care about contents; nuking /vagrant/MEANworkspace/myChatApp/collaba/node_modules/.staging/microtime-ca4f8baa
+217 verbose tar unpack /home/vagrant/.npm/acorn/2.7.0/package.tgz
+218 verbose tar unpacking to /vagrant/MEANworkspace/myChatApp/collaba/node_modules/.staging/acorn-ef079ca2
+219 silly gentlyRm /vagrant/MEANworkspace/myChatApp/collaba/node_modules/.staging/acorn-ef079ca2 is being purged
+220 verbose gentlyRm don't care about contents; nuking /vagrant/MEANworkspace/myChatApp/collaba/node_modules/.staging/acorn-ef079ca2
+221 verbose tar unpack /home/vagrant/.npm/socket/0.0.1/package.tgz
+222 verbose tar unpacking to /vagrant/MEANworkspace/myChatApp/collaba/node_modules/.staging/socket-ee36d1bf
+223 silly gentlyRm /vagrant/MEANworkspace/myChatApp/collaba/node_modules/.staging/socket-ee36d1bf is being purged
+224 verbose gentlyRm don't care about contents; nuking /vagrant/MEANworkspace/myChatApp/collaba/node_modules/.staging/socket-ee36d1bf
+225 silly gunzTarPerm modes [ '755', '644' ]
+226 silly gunzTarPerm modes [ '755', '644' ]
+227 silly gunzTarPerm modes [ '755', '644' ]
+228 silly gunzTarPerm extractEntry index.js
+229 silly gunzTarPerm extractEntry package.json
+230 silly gunzTarPerm extractEntry examples/
+231 silly gunzTarPerm extractEntry LICENSE
+232 silly gunzTarPerm extractEntry package.json
+233 silly gunzTarPerm extractEntry .npmignore
+234 silly gunzTarPerm extractEntry README.md
+235 silly gunzTarPerm extractEntry examples/echo-server.js
+236 silly gunzTarPerm extractEntry examples/simple-test.js
+237 silly gunzTarPerm extractEntry examples/simple-time-server.js
+238 silly gunzTarPerm extractEntry README.md
+239 silly gunzTarPerm extractEntry test.js
+240 silly gunzTarPerm extractEntry index.js
+241 silly gunzTarPerm extractEntry lib/
+242 silly gunzTarPerm extractEntry LICENSE
+243 silly gunzTarPerm extractEntry wscript
+244 silly gunzTarPerm extractEntry src/microtime.cc
+245 silly gunzTarPerm extractEntry lib/index.js
+246 silly gunzTarPerm extractEntry lib/middleware/
+247 silly gunzTarPerm extractEntry .tern-project
+248 silly gunzTarPerm extractEntry .travis.yml
+249 silly gunzTarPerm extractEntry lib/middleware/echo.js
+250 silly gunzTarPerm extractEntry lib/middleware/errorHandler.js
+251 silly gunzTarPerm extractEntry lib/middleware/json.js
+252 silly gunzTarPerm extractEntry lib/middleware/profiler.js
+253 silly gunzTarPerm extractEntry lib/proto.js
+254 silly gunzTarPerm extractEntry lib/utils.js
+255 silly gunzTarPerm extractEntry nbproject/
+256 silly gunzTarPerm extractEntry nbproject/private/
+257 silly gunzTarPerm extractEntry nbproject/private/private.properties
+258 silly gunzTarPerm extractEntry nbproject/project.properties
+259 silly gunzTarPerm extractEntry nbproject/project.xml
+260 silly gunzTarPerm extractEntry package.json
+261 silly gunzTarPerm extractEntry scripts/
+262 silly gunzTarPerm extractEntry scripts/lint
+263 silly gunzTarPerm extractEntry AUTHORS
+264 silly gunzTarPerm extractEntry .gitattributes
+265 silly gunzTarPerm extractEntry bin/build-acorn.js
+266 silly gunzTarPerm extractEntry bin/generate-identifier-regex.js
+267 silly gunzTarPerm extractEntry bin/acorn
+268 silly gunzTarPerm extractEntry bin/update_authors.sh
+269 silly gunzTarPerm extractEntry dist/acorn.js
+270 silly gunzTarPerm extractEntry dist/acorn_loose.js
+271 silly gunzTarPerm extractEntry dist/walk.js
+272 silly gunzTarPerm extractEntry dist/.keep
+273 silly gunzTarPerm extractEntry src/whitespace.js
+274 silly gunzTarPerm extractEntry src/locutil.js
+275 silly gentlyRm /vagrant/MEANworkspace/myChatApp/collaba/node_modules/.staging/microtime-ca4f8baa/node_modules is being purged
+276 verbose gentlyRm don't care about contents; nuking /vagrant/MEANworkspace/myChatApp/collaba/node_modules/.staging/microtime-ca4f8baa/node_modules
+277 silly gunzTarPerm extractEntry src/util.js
+278 silly gunzTarPerm extractEntry src/lval.js
+279 silly gunzTarPerm extractEntry src/location.js
+280 silly gunzTarPerm extractEntry src/expression.js
+281 silly gunzTarPerm extractEntry src/parseutil.js
+282 silly gunzTarPerm extractEntry src/state.js
+283 silly gunzTarPerm extractEntry src/statement.js
+284 silly gunzTarPerm extractEntry src/tokencontext.js
+285 silly gunzTarPerm extractEntry src/index.js
+286 silly gunzTarPerm extractEntry src/tokenize.js
+287 silly gunzTarPerm extractEntry src/identifier.js
+288 silly gunzTarPerm extractEntry src/tokentype.js
+289 silly gunzTarPerm extractEntry src/node.js
+290 silly gunzTarPerm extractEntry src/options.js
+291 silly gunzTarPerm extractEntry src/loose/acorn_loose.js
+292 silly gunzTarPerm extractEntry src/loose/expression.js
+293 silly gunzTarPerm extractEntry src/loose/index.js
+294 silly gunzTarPerm extractEntry src/loose/parseutil.js
+295 silly gunzTarPerm extractEntry src/loose/state.js
+296 silly gunzTarPerm extractEntry src/loose/statement.js
+297 silly gunzTarPerm extractEntry src/loose/tokenize.js
+298 silly gunzTarPerm extractEntry src/walk/index.js
+299 silly gunzTarPerm extractEntry src/bin/acorn.js
+300 silly gunzTarPerm extractEntry .editorconfig
+301 silly gentlyRm /vagrant/MEANworkspace/myChatApp/collaba/node_modules/.staging/socket-ee36d1bf/node_modules is being purged
+302 verbose gentlyRm don't care about contents; nuking /vagrant/MEANworkspace/myChatApp/collaba/node_modules/.staging/socket-ee36d1bf/node_modules
+303 silly gentlyRm /vagrant/MEANworkspace/myChatApp/collaba/node_modules/.staging/acorn-ef079ca2/node_modules is being purged
+304 verbose gentlyRm don't care about contents; nuking /vagrant/MEANworkspace/myChatApp/collaba/node_modules/.staging/acorn-ef079ca2/node_modules
+305 silly doParallel preinstall 3
+306 silly preinstall acorn@2.7.0 /vagrant/MEANworkspace/myChatApp/collaba/node_modules/.staging/acorn-ef079ca2
+307 info lifecycle acorn@2.7.0~preinstall: acorn@2.7.0
+308 silly preinstall microtime@0.2.0 /vagrant/MEANworkspace/myChatApp/collaba/node_modules/.staging/microtime-ca4f8baa
+309 info lifecycle microtime@0.2.0~preinstall: microtime@0.2.0
+310 silly preinstall socket@0.0.1 /vagrant/MEANworkspace/myChatApp/collaba/node_modules/.staging/socket-ee36d1bf
+311 info lifecycle socket@0.0.1~preinstall: socket@0.0.1
+312 silly lifecycle microtime@0.2.0~preinstall: no script for preinstall, continuing
+313 silly lifecycle acorn@2.7.0~preinstall: no script for preinstall, continuing
+314 silly lifecycle socket@0.0.1~preinstall: no script for preinstall, continuing
+315 silly doReverseSerial remove 0
+316 silly doSerial move 0
+317 silly doSerial finalize 3
+318 silly finalize /vagrant/MEANworkspace/myChatApp/collaba/node_modules/acorn
+319 silly finalize /vagrant/MEANworkspace/myChatApp/collaba/node_modules/microtime
+320 silly finalize /vagrant/MEANworkspace/myChatApp/collaba/node_modules/socket
+321 silly doSerial build 3
+322 silly build acorn@2.7.0
+323 info linkStuff acorn@2.7.0
+324 silly linkStuff acorn@2.7.0 has /vagrant/MEANworkspace/myChatApp/collaba/node_modules as its parent node_modules
+325 verbose linkBins acorn@2.7.0
+326 verbose link bins [ { acorn: './bin/acorn' },
+326 verbose link bins   '/vagrant/MEANworkspace/myChatApp/collaba/node_modules/.bin',
+326 verbose link bins   false ]
+327 verbose linkMans acorn@2.7.0
+328 silly gentlyRm /vagrant/MEANworkspace/myChatApp/collaba/node_modules/.bin/acorn is being purged
+329 verbose gentlyRm don't care about contents; nuking /vagrant/MEANworkspace/myChatApp/collaba/node_modules/.bin/acorn
+330 warn install:acorn@2.7.0 EPROTO: protocol error, symlink '../acorn/bin/acorn' -> '/vagrant/MEANworkspace/myChatApp/collaba/node_modules/.bin/acorn'
+331 verbose install:acorn@2.7.0 Error: EPROTO: protocol error, symlink '../acorn/bin/acorn' -> '/vagrant/MEANworkspace/myChatApp/collaba/node_modules/.bin/acorn'
+331 verbose install:acorn@2.7.0     at Error (native)
+332 silly build microtime@0.2.0
+333 info linkStuff microtime@0.2.0
+334 silly linkStuff microtime@0.2.0 has /vagrant/MEANworkspace/myChatApp/collaba/node_modules as its parent node_modules
+335 verbose linkBins microtime@0.2.0
+336 verbose linkMans microtime@0.2.0
+337 silly build socket@0.0.1
+338 info linkStuff socket@0.0.1
+339 silly linkStuff socket@0.0.1 has /vagrant/MEANworkspace/myChatApp/collaba/node_modules as its parent node_modules
+340 verbose linkBins socket@0.0.1
+341 verbose linkMans socket@0.0.1
+342 silly doSerial global-link 0
+343 silly doParallel update-linked 0
+344 silly doSerial install 3
+345 silly install microtime@0.2.0 /vagrant/MEANworkspace/myChatApp/collaba/node_modules/.staging/microtime-ca4f8baa
+346 info lifecycle microtime@0.2.0~install: microtime@0.2.0
+347 verbose lifecycle microtime@0.2.0~install: unsafe-perm in lifecycle false
+348 verbose lifecycle microtime@0.2.0~install: PATH: /usr/lib/node_modules/npm/bin/node-gyp-bin:/vagrant/MEANworkspace/myChatApp/collaba/node_modules/microtime/node_modules/.bin:/vagrant/MEANworkspace/myChatApp/collaba/node_modules/.bin:/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+349 verbose lifecycle microtime@0.2.0~install: CWD: /vagrant/MEANworkspace/myChatApp/collaba/node_modules/microtime
+350 silly lifecycle microtime@0.2.0~install: Args: [ '-c', 'node-waf configure build' ]
+351 info lifecycle microtime@0.2.0~install: Failed to exec install script
+352 verbose unlock done using /home/vagrant/.npm/_locks/staging-6eb66b02256a7e68.lock for /vagrant/MEANworkspace/myChatApp/collaba/node_modules/.staging
+353 silly rollbackFailedOptional Starting
+354 silly rollbackFailedOptional Finishing
+355 silly runTopLevelLifecycles Starting
+356 silly runTopLevelLifecycles Finishing
+357 silly install printInstalled
+358 verbose stack Error: microtime@0.2.0 install: `node-waf configure build`
+358 verbose stack spawn ENOENT
+358 verbose stack     at ChildProcess.<anonymous> (/usr/lib/node_modules/npm/lib/utils/spawn.js:33:16)
+358 verbose stack     at emitTwo (events.js:106:13)
+358 verbose stack     at ChildProcess.emit (events.js:191:7)
+358 verbose stack     at maybeClose (internal/child_process.js:877:16)
+358 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
+359 verbose pkgid microtime@0.2.0
+360 verbose cwd /vagrant/MEANworkspace/myChatApp/collaba
+361 error Linux 4.4.0-21-generic
+362 error argv "/usr/bin/nodejs" "/usr/bin/npm" "install" "socket" "--save"
+363 error node v6.6.0
+364 error npm  v3.10.3
+365 error file sh
+366 error code ELIFECYCLE
+367 error errno ENOENT
+368 error syscall spawn
+369 error microtime@0.2.0 install: `node-waf configure build`
+369 error spawn ENOENT
+370 error Failed at the microtime@0.2.0 install script 'node-waf configure build'.
+370 error Make sure you have the latest version of node.js and npm installed.
+370 error If you do, this is most likely a problem with the microtime package,
+370 error not with npm itself.
+370 error Tell the author that this fails on your system:
+370 error     node-waf configure build
+370 error You can get information on how to open an issue for this project with:
+370 error     npm bugs microtime
+370 error Or if that isn't available, you can get their info via:
+370 error     npm owner ls microtime
+370 error There is likely additional logging output above.
+371 verbose exit [ 1, true ]
