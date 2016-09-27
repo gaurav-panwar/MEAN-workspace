@@ -14,7 +14,7 @@
 		</ul>
 	</main>
 	<main class="chat-win" class="mdl-cell mdl-cell-8-col">
-		<ul id='chat-msg'></ul>
+		<ul id='chat-msgs'></ul>
 		<form action="/users/chats" method="post" style="position:fixed; bottom:5px;" >
 			<input type="text" name="msg" id='msg' placeholder="Type a message" autofocus />
 			<button type="submit">Send</button>
@@ -25,7 +25,12 @@
 	<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
 	<script type="text/javascript">
 		var socket = io();
+		console.log(socket.id + ' is online.');
+		$('form').submit(function() {
 
+			socket.emit('Chat-msg', $('#msg').val());
+			$('#msg').val('');
+		})
 	</script>
 </body>
 </html>
