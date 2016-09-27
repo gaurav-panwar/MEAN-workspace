@@ -8,9 +8,8 @@ var ejs = require('ejs');
 var mongoose = require('mongoose');
 
 //Get server instance from www
-var server = require('./bin/www');
-//create socket
-var io = require('socket.io')(server);
+//var server = require('./bin/www');
+
 
 
 var routes = require('./routes/index');
@@ -77,12 +76,7 @@ db.once('open', function() {
   console.log('Connected to Database.');
 });
 
-io.on('connection', function(socket) {
-  console.log('A user ' + socket.id + ' Connected.');
 
-  io.on('disconnect', function() {
-    console.log('User ' + socket.id + ' disconnected.');
-  });
-});
+
 
 module.exports = app;
