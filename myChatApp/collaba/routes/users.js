@@ -11,17 +11,43 @@ var io = require('socket.io')(server);
 
 router.use(bodyParser());
 
-/* GET users listing. */
+/* GET the Login Page */
 router.get('/', function(req, res, next) {
 	res.render("login");
 });
 
+//Get User Logged in.
+router.post('/login', function(req, res, next) {
+  console.log('Login Module');
+  var userName = req.body.userName;
+  var userPass = req.body.userPass;
 
+  UserModel.findOne({"userName":userName, "password":userPass}, function(err, user) {
+    if(err) console.error(err);
+      console.log(user);
+      if(user) {
+        console.log("User '" + user + "' Found.");
+
+          res.redirect('/users/chats?userName=' + userName);
+          res.end();
+        }
+      });
+      res.send("User doesn't exist.");
+      //res.end();
+});
+
+
+router.get('/chats', function(req, res, next) {
+  var userName = req.query.userName;
+  res.render('chatWindow', {"userName":userName});
+});
+
+//Get the register page
 router.get('/register', function(req, res, next) {
 	res.render('register');
 });
 
-
+//Submit register data
 router.post('/register', function(req, res, next) {
   var userName = req.body.userName;
   var userPass = req.body.userPass;
@@ -69,39 +95,7 @@ router.get('/login', function (req, res, next) {
 });
 
 
-router.post('/login', function(req, res, next) {
-  console.log('Login Module');
-  var userName = req.body.userName;
-  var userPass = req.body.userPass;
 
-  UserModel.findOne({"userName":userName, "password":userPass}, function(err, user) {
-    if(err) console.error(err);
-      //console.log(user);
-      if(user) {
-        //console.log("User '" + user + "' Found.");
-        user.online = true;
-        UserModel.find({"online":true}, function(err, users) {
-          if(err) console.error(err);
-          var userList = [];
-          console.log('Online Users : ' + users);
-          for(i=0; i<users.length; ++i) { 
-            userList.push(users[i].userName);
-          }
-          console.log(userList);
-          //io.emit('Online-users', userList);
-          res.redirect('/users/chats?userName=' + userName);
-        });
-      }
-      res.send("User doesn't exist.");
-  });
-  
-});
-
-
-router.get('/chats', function(req, res, next) {
-  var userName = req.query.userName;
-  res.render('chatWindow', {"userName":userName});
-});
 
 
 router.post('/chats', function(req, res, next) {
