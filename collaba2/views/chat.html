@@ -7,18 +7,22 @@
 	<h1>Collaba Chats</h1>
 	<main id='main-online'>
 		<h3>Online Users</h3>
-		<ul id='online-Users'></ul>
+		<ul id='ul-online-users'></ul>
 	</main>
 	
 
 	<main id="main-chat">
-		<h3>Chats</h3>
+		<h3 id='chat-head'>Chats</h3>
+
 		<ul id='msg-List'></ul>
 		<form id='msg-form'>
 			<input type="text" name="msg-box" id="msg-box" placeholder="Type a Message">
-			<button type='button'>Send</button>
+			<button type='button' id='btn-send'>Send</button>
 		</form>
 	</main>
-	
+	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script   src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<!-- Custom javascript code for socket and dom access. -->
+	<script type="text/javascript" src="/javascripts/chatHtml.js"></script>
 </body>
-</html>
+</html> 

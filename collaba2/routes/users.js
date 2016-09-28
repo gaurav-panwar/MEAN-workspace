@@ -27,6 +27,11 @@ router.post('/', function(req, res, next) {
 });
 
 
+//GET the User Registration Form
+router.get('/register', function(req, res, next) {
+	res.render('register');
+});
+
 //POST the User Registration details.
 router.post('/register', function(req, res, next) {
 	console.log('POST register');
