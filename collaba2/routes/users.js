@@ -2,6 +2,11 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 var UserModel = require('../models/UserModel');
+var app = require('../app.js');
+var bodyParser = require('body-parser');
+var jwt = require('jasonwebtoken');
+var cfg = require('../authentic/config.js');
+
 
 
 /* GET users Logged In. */
@@ -13,12 +18,15 @@ router.get('/', function(req, res, next) {
 //POST the Login details of User.
 router.post('/', function(req, res, next) {
 	console.log('Login Route');
-	UserModel.findOne({email:req.body.email, password:req.body.password}, function(err, user) {
+	UserModel.findOne({userName:req.body.userName, password:req.body.password}, function(err, user) {
 		if(err) console.error(err);
 		console.log(user);
 		if(user) {
-			console.log(user.email + ' Successfully logged in.');
-			res.redirect('/chat?userName=' + user.email);
+			console.log(user.userName + ' Successfully logged in.');
+			var payload = {userName:req.body.userName};
+			var token = jwt.sign(payload, cfg.jwtSecret);
+			res.json({token:"JWT " + token});
+			//res.redirect('/chat?userName=' + user.userName, {token:token});
 		}
 		else {
 			res.send('Invalid User Credentials.');
@@ -35,7 +43,7 @@ router.get('/register', function(req, res, next) {
 //POST the User Registration details.
 router.post('/register', function(req, res, next) {
 	console.log('POST register');
-	UserModel.findOne({email: req.body.email}, function(err, existUser) {
+	UserModel.findOne({userName: req.body.userName}, function(err, existUser) {
 		if(err) console.error(err);
 		console.log(existUser);
 		if(existUser) {
@@ -43,7 +51,7 @@ router.post('/register', function(req, res, next) {
 		}
 		else {
 			var newUser = new UserModel({
-				email: req.body.email,
+				userName: req.body.userName,
 				password: req.body.password,
 				name: req.body.name,
 				phone: req.body.phone
@@ -51,9 +59,9 @@ router.post('/register', function(req, res, next) {
 
 			newUser.save(function(err, data) {
 				if(err) console.error(err);
-				console.log("User '" + newUser.email + "' Successfully registered.");
+				console.log("User '" + newUser.userName + "' Successfully registered.");
 			});
-			res.redirect('/chat?userName='+ newUser.email);
+			res.redirect('login');
 		}
 	});
 });

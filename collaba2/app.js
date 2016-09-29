@@ -5,6 +5,12 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+//for Authorization
+var passport = require('passport');
+var JwtStrategy = require('passport-jwt').Strategy;
+var ExtractJwt = require('passport-jwt').ExtractJwt;
+var cfg = require('./authentic/config.js');
+
 
 //Define the routes
 var routes = require('./routes/index');
@@ -27,6 +33,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(passport.initialize());
+
 
 //Define the routes
 app.use('/', routes);
@@ -73,5 +81,28 @@ db.once('open', function() {
   console.log('Connected to Database.');
 });
 
+
+//Initializing Jwt Strategy
+var opts = {};
+opts.jwtFromRequest = ExtractJwt.fromAuthHeader();
+opts.secretOrKey = cfg.jwtSecret;
+
+passport.use(new JwtStrategy(opts, function(payload, done) {
+  User.findOne({email:payload.email}, function(err, user) {
+    if(err) done(err, false);
+    
+    if(user) done(null, user);
+    else done(null, false);
+  });
+}));
+
+
+/*//Define secure urls
+app.get('/chat', passport.authenticate('jwt', 
+  { 
+    session:false, 
+    successRedirect:"/chat",
+    failureRedirect:"/users"
+  }));*/
 
 module.exports = app;
