@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+<head>
+	<title>Practice Page</title>
+	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="practice.css">
+</head>
+<body>
+	<h1>This is my Practice Page.</h1>
+	
+	<div ng-controller="TodoListController as todoList">
+		<span> {{todoList.remaining()}} of {{todoList.todos.length}} remaining.</span>
+		[ <a href="" ng-click="todoList.archive()">archive</a> ]
+
+		<ul class="unstyled">
+			<li ng-repeat="todo in todoList.todos">
+				<label class="checkbox">
+					<input type="checkbox" ng-model="todo.done">
+					<span class="done-{{todo.done}}">{{todo.text}} </span>
+				</label>
+			</li>
+		</ul>
+
+		<form ng-submit="todoList.addTodo()">
+			<input type="text" ng-model="todoList.todoText" size="30" placeholder="add new todo here.">
+			<button class="btn-primary" type="submit">Add</button>
+		</form>
+	</div>
+
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="practice.js"></script>
+</body>
+</html>
+
+
+<!--
+ng-route - study carefully 
+ui-router - study on monday 
+ng-outlet - Leave for now -->

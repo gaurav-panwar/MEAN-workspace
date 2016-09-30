@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var UserModel = require('../models/UserModel');
 var app = require('../app.js');
 var bodyParser = require('body-parser');
-var jwt = require('jasonwebtoken');
+var jwt = require('jsonwebtoken');
 var cfg = require('../authentic/config.js');
 
 

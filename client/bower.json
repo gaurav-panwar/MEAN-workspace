@@ -1,0 +1,20 @@
+{
+  "name": "collaba",
+  "homepage": "https://github.com/gaurav-panwar/csv2json",
+  "description": "kills every other social platforms. Provides ad free collaboration",
+  "main": "index.html",
+  "keywords": [
+    "collaba"
+  ],
+  "authors": [
+    "gaurav"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
