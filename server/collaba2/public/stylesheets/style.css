@@ -6,3 +6,13 @@ body {
 a {
   color: #00B7FF;
 }
+
+.left-msg {
+	text-align: left;
+	background-color: #ff9999;
+}
+
+.right-msg {
+	text-align: right;
+	background-color: #b3ffb3;
+}

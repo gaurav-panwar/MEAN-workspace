@@ -23,7 +23,7 @@ app.set('port', port);
 
 var server = http.createServer(app);
 var io = require('socket.io')(server);//Could've been done here.
-var chat = require('../sockets/chat')(io);
+var chat = require('../sockets/chat_socket')(io);
 
 /**
  * Listen on provided port, on all network interfaces.
