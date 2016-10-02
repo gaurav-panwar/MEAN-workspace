@@ -21,6 +21,7 @@ router.post('/', function(req, res, next) {
 	UserModel.findOne({userName:req.body.userName, password:req.body.password}, function(err, user) {
 		if(err) console.error(err);
 		console.log(user);
+
 		if(user) {
 			console.log(user.userName + ' Successfully logged in.');
 			var payload = {userName:req.body.userName};
@@ -61,10 +62,12 @@ router.post('/register', function(req, res, next) {
 				if(err) console.error(err);
 				console.log("User '" + newUser.userName + "' Successfully registered.");
 			});
-			res.redirect('login');
+			res.redirect('/');
 		}
 	});
 });
+
+
 
 
 module.exports = router;

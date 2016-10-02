@@ -24,7 +24,8 @@ $(function() {
 	});
 
 	//On click on an Online User - Send Chat Request
-	$('#ul-online-users > li').on('click', function() {
+	$('#ul-online-users').on('click', 'li', function() {
+		console.log('Generate Event-Chat-Request');
 		var recId = $(this).attr('id');
 		console.log(recId);
 		socket.emit('Chat-request', 
@@ -33,6 +34,7 @@ $(function() {
 
 	//On Request Receive event, Create request box.
 	socket.on('Request-received', function(data) {
+		console.log('Event-Request-received : ' + data );
 		var req = "<p id='div-chat-request' data-id='" + data.senderName + "-" + data.receiverName +
 				"'> You have received a Chat-request from " + data.senderName + ". " +
 				"<button type='button' id='btn-accept-req'>Accept</button>" +
@@ -42,18 +44,21 @@ $(function() {
 
 	//On Accept button press, Generate Accept event
 	$('#btn-accept-req').on('click', function() {
+		console.log('Generate Event-Request-accepted ');
 		var d = $(this).parent().attr('data-id').split('-');
 		socket.emit('Request-accepted', {senderName:d[0], receiverName:d[1]});
 	});
 
 	//On Reject button Press, Generate Reject event
 	$('#btn-reject-req').on('click', function() {
+		console.log('Generate Event-Request-rejected');
 		var d = $(this).parent().attr('data-id').split('-');
 		socket.broadcast.to(d[0]).emit('Request-rejected', {senderName:d[0], receiverName:d[1]});
 	});
 
 	//Start Chat Event
 	socket.on('Start-chat', function(data) {
+		console.log('Event-Start-chat' + data);
 		console.log('Starting Chat between ' + data.senderName + " and " + data.receiverName + "." );
 		$('#div-chat-request').hide();
 		$('#chat-head').text("Chats -" + userName + "-" + data.receiverName);
@@ -61,6 +66,7 @@ $(function() {
 
 	//Block Sender
 	socket.on('Block-sender', function(data) {
+		console.log('Event-Block-sender' + data);
 		$('#div-chat-request').hide();
 		var li = $('#ul-online-users li').each(function(){
 			if(data.receiverName == li.text());
@@ -71,6 +77,7 @@ $(function() {
 
 	//Create Chat Message event when user clicks Send.(Outgoing)
 	$('#btn-send').on('click', function() {
+		console.log('Generate Event-Chat-msg');
 		var msg = $('#msg-box').val();
 		var str = $('#chat-head').text().split('-');
 		if(msg != null && msg != "")
@@ -81,8 +88,9 @@ $(function() {
 	});
 
 
-	//incoming message
+	//Incoming message
 	socket.on('Chat-msg', function(data) {
+		console.log('Event-Chat-msg' + data);
 		$('#msg-list').append("<li id='" + data.senderName + "-" + data.receiverName + "' class='in-msg'> " + data.senderName + " : " + data.msg + "</li>")
 	});
 
