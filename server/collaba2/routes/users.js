@@ -26,8 +26,8 @@ router.post('/', function(req, res, next) {
 			console.log(user.userName + ' Successfully logged in.');
 			var payload = {userName:req.body.userName};
 			var token = jwt.sign(payload, cfg.jwtSecret);
-			//res.json({token:"JWT " + token});//For passport Validation
-			res.redirect('/chat?userName=' + user.userName);
+			res.json({token:"JWT " + token});//For passport Validation
+			//res.redirect('/chat?userName=' + user.userName);
 		}
 		else {
 			res.send('Invalid User Credentials.');

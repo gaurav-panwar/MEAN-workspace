@@ -1,0 +1,15 @@
+
+<div layout="column">
+	<form ng-submit='ctrl.submit()'>
+		<input type="text" name="userName" id="userName" placeholder="User Name" ng-model='ctrl.user.userName'/>
+		<input type="text" name="name" id='name' placeholder="Name" ng-model='ctrl.user.name'/>
+		<input type="password" name="password" id='password' ng-model='ctrl.user.password' placeholder="Password" />
+		<input type="password" name="confPass" id='confPass' ng-model='ctrl.user.confPass' placeholder="Confirm Password"/>
+		<button type="submit" class='md-primary'>Register</button>
+			
+		<br><br>New User? Register Now!
+		<button ng-href="#/login" formmethod="get" class='md-primary'>Login</button>
+	</form>
+</div>
+
+

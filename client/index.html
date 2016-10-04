@@ -1,18 +1,27 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app='collabaApp'>
 <head>
-	<title>First Angular Page</title>
-	<!-- <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css"> -->
-	<link rel="stylesheet" type="text/css" href="bower_components/angular-material/angular-material.min.css">
+	<title>Login Page</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<link rel="stylesheet" type="text/css" href="bower_components/angular-material/angular-material.css">
 </head>
 <body>
-	<h1 class="col-sm-8 well">I am the First File. Testing</h1>
-	<a href="practice.html">Go to practice</a>
+	<h1>Collaba Chat App</h1>
+	<div ng-view>
+		<!-- Angular Templating
+			All Display Content will Come here using routes and all -->
+	</div>
 
-	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
-	<!-- <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script> -->
-	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
-	<script type="text/javascript" src="bower_components/angular-material/angular-material.min.js"></script>
+	<!-- <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script> -->
+	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+	<script type="text/javascript" src="bower_components/angular-material/angular-material.js"></script>
+	<script type="text/javascript" src='bower_components/angular-route/angular-route.js'></script>
+
+	<script type="text/javascript" src='routes_config.js'></script>
+	<script type="text/javascript" src='login_ctrl.js'></script>
+	<script type="text/javascript" src='register_ctrl.js'></script>
+	<script type="text/javascript" src='login_service.js'></script>
 
 </body>
 </html>
