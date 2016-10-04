@@ -1,24 +1,21 @@
 //Defining(Setting) angular collabaApp
-angular.module('collabaApp', ['ngRoute'])
-	.config(['$locationProvider', '$routeProvider', configFunc]);//define dependencies
-
-
-function configFunc($locationProvider, $routeProvider) {
+angular.module('collabaApp', ['ngRoute', 'ngMaterial'])
+	.config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
 	//$locationProvider.hashPrefix('!');
 
 	$routeProvider
 		.when('/', {
-			templateUrl:'login_template.html',
+			templateUrl:'login/login_template.html',
 			controller: 'LoginController',
 			controllerAs: 'ctrl'
 		})
 		.when('/login', {
-			templateUrl: 'login_template.html',
+			templateUrl: 'login/login_template.html',
 			controller: 'LoginController',
 			controllerAs: 'ctrl'
 		})
 		.when('/register', {
-			templateUrl:'register_template.html',
+			templateUrl:'register/register_template.html',
 			controller: 'RegisterController',
 			controllerAs: 'ctrl'
 		})
@@ -26,4 +23,4 @@ function configFunc($locationProvider, $routeProvider) {
 			templateUrl:''
 		})*/
 		.otherwise('/login');
-}
+	}]);

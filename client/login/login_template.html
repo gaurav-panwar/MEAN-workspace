@@ -1,0 +1,38 @@
+		<!-- <div ng-controller='LoginController as login'> -->
+	<div class = "md-inline-form">
+	  <md-content layout-gt-sm="row" layout-padding class="md-hue-2" layout-align='center center' align='center'>
+	    <h3 align="center">Login</h3>
+	    {{ctrl.error}}
+		</md-content>
+		
+		<md-content>
+
+			<div layout="column" layout-align="space-between center">
+			<form name="loginForm" ng-submit="ctrl.login()">
+		 		<div layout-gt-sm="row">
+		  	<md-input-container class="md-block" flex-gt-sm="">
+		     <label>Username</label>
+		     <input ng-model="ctrl.user.username" autofocus required>
+		   </md-input-container>
+
+		 </div>
+
+
+		 <div layout-gt-sm="row">
+		   <md-input-container class="md-block" flex-gt-sm="">
+		     <label>Password</label>
+		     <input ng-model="ctrl.user.password" type="password" required>
+		   </md-input-container>
+		 </div>
+
+		 <md-button type='submit' class="md-raised md-primary" aria-label="login"  >Login</md-button>
+		 <md-button type='reset' class='md-raised md-warn'>Reset</md-button>
+
+		 </form>
+		 <br>
+		 	<md-button class='md-raised' ng-href="#/register">Register</md-button>
+		</div>
+		</md-content>
+	</div>
+			
+		<!-- </div> -->

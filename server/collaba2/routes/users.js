@@ -26,7 +26,7 @@ router.post('/', function(req, res, next) {
 			console.log(user.userName + ' Successfully logged in.');
 			var payload = {userName:req.body.userName};
 			var token = jwt.sign(payload, cfg.jwtSecret);
-			res.json({token:"JWT " + token});//For passport Validation
+			res.send({token:"JWT " + token});//For passport Validation
 			//res.redirect('/chat?userName=' + user.userName);
 		}
 		else {
@@ -48,7 +48,7 @@ router.post('/register', function(req, res, next) {
 		if(err) console.error(err);
 		console.log(existUser);
 		if(existUser) {
-			res.send("User already exists.");
+			res.send(false);
 		}
 		else {
 			var newUser = new UserModel({
@@ -62,7 +62,7 @@ router.post('/register', function(req, res, next) {
 				if(err) console.error(err);
 				console.log("User '" + newUser.userName + "' Successfully registered.");
 			});
-			res.redirect('/');
+			res.send(true);
 		}
 	});
 });
