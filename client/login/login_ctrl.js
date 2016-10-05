@@ -11,6 +11,5 @@ angular.module('collabaApp')
 		ctrl.login = function (){
 			console.log('Form Login');
 			LoginService.loginUser(ctrl.user);
-			
 		}
 	}
