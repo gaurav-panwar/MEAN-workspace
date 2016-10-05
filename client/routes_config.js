@@ -19,8 +19,10 @@ angular.module('collabaApp', ['ngRoute', 'ngMaterial'])
 			controller: 'RegisterController',
 			controllerAs: 'ctrl'
 		})
-		/*.when('/chat/:userName', {
-			templateUrl:''
-		})*/
+		.when('/chat', {
+			templateUrl: 'chat/chat_template.html',
+			controller: 'ChatController',
+			controllerAs: 'ctrl'
+		})
 		.otherwise('/login');
 	}]);

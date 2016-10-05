@@ -10,6 +10,7 @@ var passport = require('passport');
 var JwtStrategy = require('passport-jwt').Strategy;
 var ExtractJwt = require('passport-jwt').ExtractJwt;
 var cfg = require('./authentic/config.js');
+var UserModel = require('./models/UserModel');
 
 
 //Define the routes
@@ -89,11 +90,16 @@ opts.jwtFromRequest = ExtractJwt.fromAuthHeader();
 opts.secretOrKey = cfg.jwtSecret;
 
 passport.use(new JwtStrategy(opts, function(payload, done) {
-  User.findOne({email:payload.email}, function(err, user) {
-    if(err) done(err, false);
+  UserModel.findOne({userName:payload.userName}, function(err, user) {
+    if(err) 
+      done(err, false)
     
-    if(user) done(null, user);
-    else done(null, false);
+    if(user) {
+      console.log(user);
+      done(null, user)
+    }
+    else 
+      done(null, false);
   });
 }));
 
