@@ -5,24 +5,24 @@ angular.module('collabaApp', ['ngRoute', 'ngMaterial'])
 
 	$routeProvider
 		.when('/', {
-			templateUrl:'login/login_template.html',
+			templateUrl:'login/login.html',
 			controller: 'LoginController',
 			controllerAs: 'ctrl'
 		})
 		.when('/login', {
-			templateUrl: 'login/login_template.html',
+			templateUrl: 'login/login.html',
 			controller: 'LoginController',
 			controllerAs: 'ctrl'
 		})
 		.when('/register', {
-			templateUrl:'register/register_template.html',
+			templateUrl:'register/register.html',
 			controller: 'RegisterController',
 			controllerAs: 'ctrl'
 		})
 		.when('/chat', {
-			templateUrl: 'chat/chat_template.html',
+			templateUrl: 'chat/chat.html',
 			controller: 'ChatController',
 			controllerAs: 'ctrl'
 		})
-		.otherwise('/login');
+		.otherwise('/');
 	}]);
