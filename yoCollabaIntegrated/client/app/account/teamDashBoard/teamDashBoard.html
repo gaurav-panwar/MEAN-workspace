@@ -1,0 +1,76 @@
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3">
+        <h3>
+          Channels
+        </h3>
+        <div ng-repeat="channel in vm.team.channels">
+          <p ng-click="vm.channelClick(channel)">{{channel.name}}</p>
+        </div>
+        <div ng-show="vm.isTeamLead">
+          <button type="button" class="btn btn-lg btn-primary">
+            AddNewChannel
+          </button>
+          <form role="form">
+            <div class="form-group">
+
+              <label for="channelName">
+                Channel Name
+              </label>
+              <input type="text" class="form-control" id="channelName">
+            </div>
+            <div class="form-group">
+
+              <label for="channelParticipants">
+                Password
+              </label>
+              <input type="text" class="form-control" id="channelParticipants">
+            </div>
+
+            <button type="submit" class="btn btn-default">
+              Create Channel
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-6">
+
+        <div id="chat">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Enter message" ng-model="vm.message" />
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button" ng-click="vm.sendMessage()">Send</button>
+            </span>
+          </div>
+          <br/>
+          <ul ng-repeat='chat in vm.chatHistory' class="list-group">
+            <li class="list-group-item"><span class="well">{{chat.sender}}</span>&nbsp;<span class="message"> {{chat.message}}</span></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="col-md-3">
+        <h3>
+          {{vm.team.name}}
+        </h3>
+        <h4>
+          {{vm.team.teamLeadEmail}}
+        </h4>
+        <ul class="list-unstyled" ng-repeat="x in vm.team.members">
+          <li>
+            <p>{{x.name}}    {{x.email}}</p>
+          </li>
+
+        </ul>
+        <form ng-submit="vm.addMember()" ng-show="vm.isTeamLead">
+          email:
+          <input type="email" ng-model="vm.user.email">
+          <input type="submit" value="add member">
+
+        </form>
+      </div>
+    </div>
+  </div>
+</body>

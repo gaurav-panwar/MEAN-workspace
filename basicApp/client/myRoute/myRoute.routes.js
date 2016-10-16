@@ -1,11 +1,11 @@
 
-angular.module('myRoute', [])
-	.config(['$routeProvider', myRoute]);
+angular.module('myRoute', ['ngRoute'])
+	.config(['$routeProvider', routeConfig]);
 
-	function myRoute($http) {
+	function routeConfig($routeProvider) {
 		$routeProvider
 			.when('/', {
-				templateUrl: './myRoute.html',
+				templateUrl: './myRoute/myRoute.html',
 				controller: 'myRouteController',
 				controllerAs: 'vm'
 			})

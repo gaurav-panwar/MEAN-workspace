@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="oraganisationDashBoard.css">
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>Welcome, {{vm.org.name}}</h1>
+    <!--<p class="lead">Welcome To your DashBoard</p>-->
+
+  </div>
+</header>
+<!-- display online users -->
+
+<div class="row">
+<div class="col-xs-4 leftPane">
+  <div class="col-xs-12"><h3>Teams Registered</h3>
+    <table class="table table-striped">
+  
+</table>
+  </div>
+</div>
+<div class="col-xs-8 rightPane">
+ <!-- team add button -->
+<div class="col-xs-12">
+  <div class="col-xs-8">
+  </div>
+  <div class="col-xs-4">
+    <button class="btn btn-danger" ng-click="vm.setFormCheck()" >Add Team</button>
+
+    <form ng-show="vm.showForm" ng-submit="vm.addTeam()">
+      <div class="form-group">
+        <label>Team Name:</label>
+        <input type="text" class="form-control" ng-model="vm.team.name" >
+      </div>
+
+  <div class="form-group">
+    <label for="email">Email address:</label>
+    <input type="email" class="form-control" ng-model="vm.team.email">
+  </div>
+
+
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+  </div>
+</div>
+<!-- organisation details -->
+<div class="col-xs-12">
+</div>
+</div>
+</div>
+</div>

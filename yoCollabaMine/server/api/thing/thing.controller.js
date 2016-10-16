@@ -63,14 +63,15 @@ function handleError(res, statusCode) {
   };
 }
 
-// Gets a list of Things
+// Gets a list of Things (called when get('/'))
 export function index(req, res) {
   return Thing.find().exec()
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
-// Gets a single Thing from the DB
+
+// Gets a single Thing from the DB (called when get('/:id'))
 export function show(req, res) {
   return Thing.findById(req.params.id).exec()
     .then(handleEntityNotFound(res))
@@ -78,14 +79,15 @@ export function show(req, res) {
     .catch(handleError(res));
 }
 
-// Creates a new Thing in the DB
+
+// Creates a new Thing in the DB (called when post('/:id'))
 export function create(req, res) {
   return Thing.create(req.body)
     .then(respondWithResult(res, 201))
     .catch(handleError(res));
 }
 
-// Upserts the given Thing in the DB at the specified ID
+// Upserts the given Thing in the DB at the specified ID (called when put('/:id'))
 export function upsert(req, res) {
   if(req.body._id) {
     delete req.body._id;

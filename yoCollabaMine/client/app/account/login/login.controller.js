@@ -26,7 +26,7 @@ export default class LoginController {
         email: this.user.email,
         password: this.user.password
       })
-        .then(() => {
+        .then(() => {//anonymous arrow function
           // Logged in, redirect to home
           this.$state.go('main');
         })

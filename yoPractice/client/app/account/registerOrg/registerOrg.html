@@ -1,0 +1,38 @@
+<div class="container">
+	<h1 align="center">Register Organization</h1>
+	<div class="col-sm-6 col-sm-offset-3">
+		<form class='form' name="formRegisterOrg" ng-submit='vm.registerOrg()'>
+		
+		<div class="form-group">
+			<label for="name">Organization Name</label>
+			<input type="text" id="name" ng-model='vm.org.name' required />
+			<p class="error" ng-show='vm.error.name'>A Name is required.</p>
+		</div>
+
+		<div class="form-group">
+			<label for="email">E-mail</label>
+			<input type="email" id="email" ng-model='vm.org.email' required />
+			<p class="error" ng-show='vm.error.email'>An Email is required.</p>
+		</div>
+
+		<div class="form-group">
+			<label for="password">Password</label>
+			<input type="password" id="password" ng-model='vm.org.password' />
+		</div>
+
+		<div class="form-group">
+			<label for="confirmPass">Confirm Password</label>
+			<input type="password" id="confirmPass" ng-model='vm.org.confirmPass' />
+			<p class="error" ng-show='vm.error.passwordMatch'>The passwords must Match.</p>
+		</div>
+
+		<div class="clearfix"></div>
+		<br>
+		<div align="center">
+			<button type="submit" class="btn btn-success">Register</button>
+			<button type="reset" class="btn btn-danger">Clear</button>
+		</div>
+			
+	</form>
+	</div>
+</div>

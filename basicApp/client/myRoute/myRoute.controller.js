@@ -1,16 +1,16 @@
 'use strict';
 
-var myRoute = angular.module('myRoute')
-	.controller('myRouteController', ['myRouteService', myRouteController]);
+	angular.module('myRoute')
+		.controller('myRouteController', ['myRouteService', myRouteController]);
 
 	function myRouteController(myRouteService) {
 		var vm = this;
-		console.log('My Route Controller');
-		console.log('My data at Client : ' + vm.data);
+
 		vm.submitForm = submitForm;
 
-		function submitForm(vm.data) {
+		function submitForm() {
+			console.log(vm.data);
 			myRouteService.funServe(vm.data);
 		}
-		
+
 	}

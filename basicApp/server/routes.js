@@ -1,13 +1,25 @@
 var express = require('express');
 var router = express.Router();
-var bodyParser = require('body-parser');
+var Users = require('./users');
 
 
-router.post('/', function(req, res, next) {
-	var testData = req.body.testData;
-	console.log('Data Received at Server : ' + testData);
-	res.send('Response from Server');
-});
 
-module.exports = router; 
+//Should be done by Front end Client side routes
+/*router.get('/', function(req, res, next) {
 
+});*/
+
+router.post('/',function(req, res) {
+		var user = new Users();
+		user.name= req.body.name;
+		user.save(function(err){
+			if(err){
+				res.send(err);
+			} else {
+				res.json({
+					message : 'You have been registered'
+				});
+			}
+		});
+	})
+module.exports = router;
